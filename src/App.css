@@ -5,6 +5,13 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior:smooth;
+}
+a,
+.btn {
+  transition: all 300ms ease;
+}
 main{
   width: 100%;
   height: 100vh;
@@ -43,17 +50,24 @@ nav #nav{
   font-weight: 400;
   font-style: normal;
 }
-#home,#about{
-  margin-top: 80px;
+#home,#about,#skill,#project{
   display: flex;
   min-height: 100%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+#home{
+  margin-top: 80px;
   gap: 2rem;
 }
-#about{
+#about,#skill,#project{
   flex-direction: column;
+}
+#skill{
+  display: grid;
+    place-items: center;
+  height: fit-content;
 }
 #profile_image{
   flex:1.2 0 20rem;
@@ -150,4 +164,76 @@ justify-content: center;
 
 .downloadbtn:hover {
   border: rgb(255, 255, 255) 0.1rem solid;
+}
+.skill{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+article{
+  display: flex;
+  width: 12rem;
+  justify-content: flex-start;
+  gap: 0.9rem;
+}
+article img{
+ width: 35px;
+ height: 35px;
+}
+#Frontend,#backend{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 350px;
+  padding:1rem;
+  border:2px  solid rgb(163, 163, 163);
+  border-radius: 15px;
+  flex-direction: column;
+  margin: 10px;
+}
+#content{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  min-height: 422px;
+}
+.heading h1{
+  text-align: center;
+}
+@media (max-width:610px) {
+  .skill{
+    flex-direction: column;
+  }
+  #content{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width:1040px){
+ #skill{
+  display: flex;
+ }
+  #content{
+   display: grid;
+   grid-template-columns: 0.5fr 0.5fr;
+   min-height: 0px;
+  }
+  #Frontend,#backend{
+        min-height: 317px;
+  }
+}
+#PROJECT img{
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+}
+#PROJECT{
+  padding: 10px;
+  border:2px  solid rgb(163, 163, 163);
+  border-radius: 12px;
 }

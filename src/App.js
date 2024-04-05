@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 import Home from "./Home";
 import About from "./About";
+import Skill from "./Skill";
+import Project from "./Project";
 const App = () => {
   return (
     <main>
@@ -19,6 +21,12 @@ const App = () => {
       </section>
       <section id="about">
         <About />
+      </section>
+      <section id="skill">
+        <Skill />
+      </section>
+      <section id="project">
+        <Project />
       </section>
     </main>
   );
