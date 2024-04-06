@@ -50,24 +50,31 @@ nav #nav{
   font-weight: 400;
   font-style: normal;
 }
-#home,#about,#skill,#project{
+#home,#about,#skill,#project,#contact{
   display: flex;
-  min-height: 100%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+#contact{
+  margin-top: 30px;
+}
+#project{
+  display: grid;
+  place-items:center ;
+ padding-top: 100px;
 }
 #home{
   margin-top: 80px;
   gap: 2rem;
 }
-#about,#skill,#project{
+#about,#skill,#contact{
   flex-direction: column;
 }
 #skill{
   display: grid;
     place-items: center;
-  height: fit-content;
+    padding-top: 20px;
 }
 #profile_image{
   flex:1.2 0 20rem;
@@ -92,7 +99,7 @@ justify-content: center;
   justify-content: center;
   align-items: center;
 }
-#profile_detail .details h1,#About_knowmore{
+#profile_detail .details h1,#About_knowmore,#contact p,#skill p,#project p{
   font-size: 1.3rem;
   color: rgb(85, 85, 85);
 }
@@ -106,15 +113,7 @@ justify-content: center;
   font-size: 1.8rem;
   color: rgb(85, 85, 85);
 }
-@media (min-width:720px) {
-  #profile_detail{
-    justify-content: flex-start;
-  }
-  #profile_image{
-    margin-top: 0px;
-    justify-content: flex-end;
-  }
-}
+
 #profile_image img{
   height: 350px;
   width: 350px;
@@ -202,6 +201,167 @@ article img{
 .heading h1{
   text-align: center;
 }
+
+#PROJECT #images #img{
+  height: 300px;
+  width: 250px;
+  object-fit: contain;
+}
+#PROJECT{
+  padding: 10px;
+  border:0.1rem solid rgb(163, 163, 163);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+#PROJECT p{
+  text-align: justify;
+  font-size: 1.1rem;
+  padding: 7px;
+}
+#PROJECT h1{
+  text-align: center;
+  font-size: 1.4rem;
+}
+#PROJECT h2{
+  font-size: 1.2rem;
+}
+#project_languages{
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+}
+#project_languages p{
+  color: black;
+  font-weight: 600;
+  font-size: 1rem;
+  flex: 1 0 8rem;
+  text-align: left;
+}
+span{
+  font-weight: 600;
+  color: rgb(26, 25, 25);
+}
+.project{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+    align-items: center;
+}
+#project_buttons{
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+#images{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.image img{
+  height: 80px;
+  width: 60px;
+  object-fit: contain;
+  padding: 3px;
+}
+.select{
+  border: 1px solid ;
+  border-radius: 12px;
+}
+#contact_details{
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  border: 0.1rem solid rgb(163, 163, 163);
+  border-radius:15px ;
+  gap: 2rem;
+}
+#contact_details a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  gap: 10px;
+}
+#contact_details a img{
+  height: 50px;
+  width: 50px;
+}
+footer #nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem ;
+}
+@media (max-width:450px){
+  #PROJECT{
+    width: 80%;
+    display: flex;
+  }
+  #contact_details{
+    width: 80%;
+    padding: 15px;
+  }
+  #contact_details a{
+    font-size: 1rem;
+  }
+  #PROJECT h1,p{
+    text-align: center;
+  }
+   #images{
+    display: flex;
+    flex-direction:column;
+   }
+   .image{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+   }
+   footer #nav{
+    padding: 15px;
+    flex-direction: column;
+    gap: 2rem;
+   }
+}
+@media (min-width:450px){
+  #images .image{
+    display: flex;
+    flex-direction: column;
+  }
+  #PROJECT{
+    width: 340px;
+  }
+  #contact{
+    min-height: 100%;
+  }
+}
+@media (min-width:720px) {
+  #profile_detail{
+    justify-content: flex-start;
+  }
+  #profile_image{
+    margin-top: 0px;
+    justify-content: flex-end;
+  }
+}
 @media (max-width:610px) {
   .skill{
     flex-direction: column;
@@ -214,26 +374,23 @@ article img{
     align-items: center;
   }
 }
+@media (min-width:700px){
+  #home,#about,#skill{
+    min-height: 100%;
+  }
+}
 @media (min-width:1040px){
  #skill{
   display: flex;
  }
+
   #content{
    display: grid;
    grid-template-columns: 0.5fr 0.5fr;
    min-height: 0px;
   }
+  
   #Frontend,#backend{
         min-height: 317px;
   }
-}
-#PROJECT img{
-  height: 300px;
-  width: 300px;
-  object-fit: contain;
-}
-#PROJECT{
-  padding: 10px;
-  border:2px  solid rgb(163, 163, 163);
-  border-radius: 12px;
 }

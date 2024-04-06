@@ -62,16 +62,16 @@ const project1 = [
 ];
 const project2 = [
   {
+    url: require("./asset/IMG_20240405_174914.jpg"),
+    alt: "mobile",
+  },
+  {
     url: require("./asset/IMG_20240405_175005.jpg"),
     alt: "home",
   },
   {
     url: require("./asset/IMG_20240405_180030.jpg"),
     alt: "mobiles",
-  },
-  {
-    url: require("./asset/IMG_20240405_174914.jpg"),
-    alt: "mobile",
   },
   {
     url: require("./asset/IMG_20240405_174820.jpg"),
