@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Home from "./Home";
 import About from "./About";
@@ -6,16 +6,29 @@ import Skill from "./Skill";
 import Project from "./Project";
 import Contact from "./Contact";
 const App = () => {
+  const [checker, setChecker] = useState({ menu: true, mode: false });
+  function handleModes() {
+    setChecker((pre) => ({ ...pre, mode: !checker.mode }));
+    document.body.classList.toggle("mode");
+  }
   return (
     <main>
       <nav>
         <h1>Sivaprasath</h1>
-        <div id="nav">
+        <div
+          className={!checker.menu ? "MENU DEACTIVATE" : "MENU"}
+          onClick={() => setChecker((pre) => ({ ...pre, menu: !checker.menu }))}
+        ></div>
+        <div className={checker.menu ? "nav deactivate" : "nav"}>
           <a href="#about">About</a>
           <a href="#skill">Skill</a>
           <a href="#project">Project</a>
           <a href="#contact">Contact</a>
         </div>
+        <div
+          className={!checker.mode ? "mode darkMode" : "mode lightMode"}
+          onClick={() => handleModes()}
+        ></div>
       </nav>
       <section id="home">
         <Home />
@@ -33,7 +46,7 @@ const App = () => {
         <Contact />
       </section>
       <footer>
-        <div id="nav">
+        <div className="nav">
           <a href="#about">About</a>
           <a href="#skill">Skill</a>
           <a href="#project">Project</a>

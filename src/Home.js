@@ -1,13 +1,10 @@
 import React from "react";
-
+import Its_me from "./asset/ItsMe.png";
 const Home = () => {
   return (
     <>
       <div id="profile_image">
-        <img
-          src="https://avatars.githubusercontent.com/u/121082414?v=4"
-          alt="sivaprasath2004"
-        />
+        <img src={Its_me} alt="sivaprasath2004" />
       </div>
       <div id="profile_detail">
         <div className="details">

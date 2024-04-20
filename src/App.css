@@ -2,9 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inconsolata:wght@200..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Reddit+Mono:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inconsolata:wght@200..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Mono:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Signika+Negative:wght@300..700&display=swap');
+:root{
+  --color:black;
+  --background:white;
+}
+.mode{
+  --color:white;
+  --background:black
+}
 *{
   margin: 0;
   padding: 0;
+}
+body{
+  color: var(--color);
 }
 a,
 .btn {
@@ -17,30 +28,38 @@ main{
   flex-direction: column;
   overflow: scroll;
   scroll-behavior: smooth;
+  background-color: var(--background);
 }
 main nav{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   width: 100%;
   height: 50px;
-  padding: 10px;
+  padding: 1rem 2rem 1rem 0;
   background: transparent;
   backdrop-filter: blur(10px);
+  z-index: 5;
+  gap:1rem;
+}
+.MENU{
+  display: none;
 }
 nav h1{
   font-family: "Fira Sans", sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 3rem;
+  width: 50%;
+  text-align: center;
 }
-nav #nav{
+nav .nav{
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 1.5rem;
 }
-#nav a{
+.nav a{
   text-decoration: none;
   color: black;
   font-size: 1.5rem;
@@ -48,6 +67,18 @@ nav #nav{
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+nav .mode{
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  background: url("https://cdn-icons-png.flaticon.com/128/6889/6889926.png");
+  height: 40px;
+  width: 40px;
+  background-size: contain;
+}
+nav .lightMode{
+  filter: invert(100%);
 }
 #home,#about,#skill,#project,#contact{
   display: flex;
@@ -58,34 +89,62 @@ nav #nav{
 #contact{
   margin-top: 30px;
 }
-#project{
+h1{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+#project,#skill,#about{
   display: grid;
   place-items:center ;
- padding-top: 100px;
+  padding-top: 100px;
 }
 #home{
-  margin-top: 80px;
+  margin-top: 40px;
   gap: 2rem;
 }
 #about,#skill,#contact{
   flex-direction: column;
 }
-#skill{
-  display: grid;
-    place-items: center;
-    padding-top: 20px;
-}
 #profile_image{
-  flex:1.2 0 20rem;
+  flex:1 0 30rem;
   margin-top: 40px;
 }
 #profile_detail{
-  flex:0.8 1 20rem;
+  flex:1 1 20rem;
 }
-#profile_image,#profile_detail{
+#profile_image,#profile_detail,#About_page_image_container{
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+#profile_image::after{
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(45deg,#3023AE 0%,#FF0099 100%);
+  height: 365px;
+  width: 365px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  z-index: -1;
+  top: 2px;
+  animation: animate 20s linear infinite;
+}
+@keyframes animate {
+  0%{
+  border-radius:30% 70% 70% 30% / 30% 30% 70% 70% ;
+  }
+  25%{
+    border-radius:39% 61% 58% 42% / 39% 42% 58% 61%   ;
+  }
+  50%{
+    border-radius:28% 72% 42% 58% / 39% 49% 51% 61% ;
+  }
+  75%{
+    border-radius: 39% 61% 58% 42% / 39% 42% 58% 61%  ;
+  }
+  100%{
+  border-radius:30% 70% 70% 30% / 30% 30% 70% 70% ;
+  }
 }
 #profile_detail{
 justify-content: center;
@@ -114,10 +173,9 @@ justify-content: center;
 }
 
 #profile_image img{
-  height: 350px;
-  width: 350px;
-  border-radius: 100%;
-  box-shadow: 0 0px 7px rgb(0, 0, 0);
+  height: 300px;
+  width: 300px;
+  border-radius: 30%;
 }
 .profile_buttons{
   display: flex;
@@ -302,7 +360,7 @@ span{
   height: 50px;
   width: 50px;
 }
-footer #nav{
+footer .nav{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -335,7 +393,7 @@ footer #nav{
     align-items: center;
     margin: 10px;
    }
-   footer #nav{
+   footer .nav{
     padding: 15px;
     flex-direction: column;
     gap: 2rem;
@@ -353,7 +411,7 @@ footer #nav{
     min-height: 100%;
   }
 }
-@media (min-width:720px) {
+@media (min-width:835px) {
   #profile_detail{
     justify-content: flex-start;
   }
@@ -374,9 +432,18 @@ footer #nav{
     align-items: center;
   }
 }
-@media (min-width:700px){
-  #home,#about,#skill{
+@media (min-width:835px){
+  #home{
     min-height: 100%;
+  }
+}
+@media (max-width:835px) {
+  #profile_detail{
+    margin-top: 60px;
+    justify-content: center;
+  }
+  #profile_image{
+    justify-content: center;
   }
 }
 @media (min-width:1040px){
@@ -392,5 +459,57 @@ footer #nav{
   
   #Frontend,#backend{
         min-height: 317px;
+  }
+}
+@media (max-width:800px){
+  nav{
+    justify-content: center;
+  }
+  nav h1{
+    width: 80%;
+    text-align: center;
+  }
+  .MENU{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 2px;
+    width: 30px;
+    background-color: black;
+    z-index: 7;
+    transition: 0.3s ease;
+  }
+  nav .DEACTIVATE{background-color: transparent;}
+  .MENU::before, .MENU::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transition: 0.3s ease;
+  }
+  .MENU::before{top: -10px;}
+  .MENU::after{top: 10px;}
+  .DEACTIVATE::before{rotate: 45deg;top: 0;}
+  .DEACTIVATE::after{rotate: -45deg;top: 0;}
+  nav .nav{
+    position: absolute;
+    height: 100vh;
+    width: 70%;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    transform: translateX(20%);
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 12px 100rem rgb(0 0 0 / 69%);
+    z-index: 6;
+    gap: 3rem;
+  }
+  nav .deactivate{
+    transform: translateX(200%);
+    box-shadow: none;
   }
 }
