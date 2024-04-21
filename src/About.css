@@ -3,6 +3,10 @@
     place-items: center;
     gap: 1rem;
 }
+#about h1:nth-child(3){
+    font-weight: 600;
+    font-family: "Reddit Mono", monospace;
+}
 .ABout_page_content{
     display: flex;  
     justify-content: center;
@@ -31,12 +35,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image:url('./asset/ItsMe.png');
-    background-color: white;
-    background-position: center;
-    background-size: contain;
     border-radius: 50%;
-
+}
+#About_page_image_container img{
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    border-radius: 50%;
+    background-color: var(--background);
 }
 #About_page_image_container::before {
     content: "";
@@ -55,7 +61,7 @@
     position: absolute;
     top: -2px;
     left: -2px;
-    z-index: -1;
+    z-index: 1;
     filter: blur(5px);
     -webkit-filter: blur(5px);
     width: calc(100% + 4px);
@@ -97,6 +103,11 @@
 #Details_column div img{
     height: 80px;
     width: 80px;
+    filter: var(--invert);
+}
+#Details_column div:nth-child(3) img{
+    filter: invert(0%);
+    background: white;
 }
 #second_container{
     display: flex;
@@ -108,18 +119,20 @@
     font-size: 4rem;
     margin: 3rem 0.2rem 0rem;
     position: relative;
-    color: #413939;
+    color: var(--secondary-color);
 }
 #special_element span:first-child{
     font-size: 2.5rem;
     position: absolute;
     top: -10px;
+    color: var(--secondary-color);
 }
 #special_element span:nth-child(2){
     font-size: 1rem;
+    color: var(--color);
 }
 #sharping_image{
-    box-shadow: 0 0px 4px rgb(161 154 154);
+    box-shadow: 0 0px 4px rgb(141 129 129);
     border-radius: 100%;
 }
 

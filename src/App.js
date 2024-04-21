@@ -9,16 +9,14 @@ const App = () => {
   const [checker, setChecker] = useState({ menu: true, mode: false });
   function handleModes() {
     setChecker((pre) => ({ ...pre, mode: !checker.mode }));
-    document.body.classList.toggle("mode");
+    document.body.classList.toggle("Modes");
   }
   return (
     <main>
       <nav>
-        <h1>Sivaprasath</h1>
-        <div
-          className={!checker.menu ? "MENU DEACTIVATE" : "MENU"}
-          onClick={() => setChecker((pre) => ({ ...pre, menu: !checker.menu }))}
-        ></div>
+        <h1>
+          S<span>ivaprasath</span>
+        </h1>
         <div className={checker.menu ? "nav deactivate" : "nav"}>
           <a href="#about">About</a>
           <a href="#skill">Skill</a>
@@ -28,6 +26,10 @@ const App = () => {
         <div
           className={!checker.mode ? "mode darkMode" : "mode lightMode"}
           onClick={() => handleModes()}
+        ></div>
+        <div
+          className={!checker.menu ? "MENU DEACTIVATE" : "MENU"}
+          onClick={() => setChecker((pre) => ({ ...pre, menu: !checker.menu }))}
         ></div>
       </nav>
       <section id="home">

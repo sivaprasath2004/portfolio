@@ -11,7 +11,9 @@ const About = () => {
       <div className="ABout_page_content">
         <div id="About_page_Profile">
           <div id="MY_PROFILE">
-            <div id="About_page_image_container"></div>
+            <div id="About_page_image_container">
+              <img src={Its_me} alt="profile" />
+            </div>
           </div>
           <p>
             Proficient in front-end development, I am deeply passionate about
