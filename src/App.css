@@ -232,6 +232,7 @@ article div p{
 .profile_buttons img{
   height: 40px;
   width: 40px;
+  filter: var(--invert);
 }
 .btn {
   font-weight: 600;
