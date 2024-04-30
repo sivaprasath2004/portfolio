@@ -98,7 +98,7 @@
     border-radius: 12px;
     margin-top: 1rem;
     width: 210px;
-    height: 210px;
+    min-height: 210px;
 }
 #Details_column div img{
     height: 80px;

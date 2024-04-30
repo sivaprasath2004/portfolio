@@ -44,7 +44,7 @@ const About = () => {
               <span>Repository</span>
             </p>
           </div>
-          <div className="container_detailing">
+          <div className="container_detailing" id="front_end_mentor">
             <img
               src={frontendMentor}
               alt="Front End Mentor"
@@ -52,7 +52,7 @@ const About = () => {
             />
             <h1>Front End Mentor</h1>
             <p id="special_element">
-              500<span>+</span>
+              2500<span>+</span>
               <span>Points</span>
             </p>
           </div>
