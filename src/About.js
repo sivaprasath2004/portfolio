@@ -15,14 +15,27 @@ const About = () => {
               <img src={Its_me} alt="profile" />
             </div>
           </div>
+          <div id="About_Contents">
           <p>
-            Proficient in front-end development, I am deeply passionate about
-            transitioning into a full-stack developer through self-learning. I
-            am a self-taught learner dedicated to crafting user-friendly
-            websites. With real-world full-stack development projects under my
-            belt, I continuously enhance my skills through daily research and
-            learning endeavors.
+          Proficient in front-end development, I am deeply passionate about transitioning into a full-stack developer through self-learning. I am a self-taught learner dedicated to crafting user-friendly websites. With real-world full-stack development projects under my belt, I continuously enhance my skills through daily research and learning endeavors. In my frontend development experience, I strive to achieve  <a href="https://www.frontendmentor.io/profile/sivaprasath2004">frontend mentor</a> solutions and attain 2 weekly and 1 monthly batches.
           </p>
+          <div className="profile_buttons">
+          <a href="https://github.com/sivaprasath2004">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/2111/2111432.png"
+                alt="github"
+              />
+              <p>Github</p>
+            </a>
+            <a href="https://www.frontendmentor.io/profile/sivaprasath2004">
+              <img id="frontend_mentor"
+                src={frontendMentor}
+                alt="frontend mentor"
+              />
+              <p>Frontend Mentor</p>
+            </a>
+          </div>
+          </div>
         </div>
         <div id="Details_column">
           <div className="container_detailing">
@@ -31,7 +44,7 @@ const About = () => {
               alt="graduate"
             />
             <h1>Education</h1>
-            <p style={{ marginTop: "3rem" }}>BSc Computer Science</p>
+            <p style={{ marginTop: "6.2rem",fontSize:'1.35rem' }}>BSc Computer Science</p>
           </div>
           <div className="container_detailing">
             <img

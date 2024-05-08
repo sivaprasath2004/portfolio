@@ -23,7 +23,7 @@
     gap: 2rem;
 }  
 #MY_PROFILE{
-    flex: 1 0 20rem;
+    flex: 0.8 0 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,12 +76,39 @@
       rotate: 360deg;
     }
   }
-.ABout_page_content p{
+  #About_Contents{
+    flex: 1 0 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #About_Contents .profile_buttons{
+    padding: 1rem   ;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 100px;
+  }
+  #About_Contents .profile_buttons a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #About_Contents img{
+    width: 50px;
+    height: 50px;
+  }
+  #About_Contents .profile_buttons{
+    gap: 2rem;
+  }
+  #About_Contents p{
     font-family: "Signika Negative", sans-serif;
     font-size: 1.2rem;
     line-height: 1.5rem;
     text-align: justify;
-    flex: 1 0 30rem;
+    width: 90%;
 }
 #Details_column{
     display: flex;
@@ -135,17 +162,24 @@
     box-shadow: 0 0px 4px rgb(141 129 129);
     border-radius: 100%;
 }
-
-@media (max-width:560px) {
+@media (min-width:1200px) {
+    #About_page_Profile{
+        gap: 0rem;
+    }
+    #MY_PROFILE{
+        justify-content: flex-end;
+    }
+}
+@media (max-width:650px) {
     .ABout_page_content{
         padding: 0;
         width: 100%;
     }
-    .ABout_page_content #About_page_Profile{
+    .ABout_page_content #About_page_Profile #About_Contents{
         width: 100%;
         flex: none;
     }
-    #About_page_Profile p{
+    #About_Contents p{
     max-width:90%;
    }
    #second_container{
@@ -153,8 +187,23 @@
     flex-wrap: wrap;
    }
 }
-@media (max-width:370px) {
-    #profile_image::after{
-        width: 70%;
+@media (max-width:988px) {
+    #About_Contents .profile_buttons {
+        justify-content: center;
+    }
+}
+@media (max-width:510px) {
+    #About_Contents .profile_buttons { 
+        margin: 0;
+        padding: 2rem;
+        align-items: flex-start;
+    }
+    #About_Contents .profile_buttons a{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #About_Contents .profile_buttons a p{
+        text-align: center;
     }
 }

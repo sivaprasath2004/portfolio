@@ -1,6 +1,7 @@
 import React from "react";
 import Its_me from "./asset/ItsMe.png";
-import { Link } from "react-router-dom";
+import Resume from "./asset/Resume.pdf";
+import frontendMentor from "./asset/Front-end-mentor.png";
 const Home = () => {
   return (
     <>
@@ -13,9 +14,9 @@ const Home = () => {
           <h2>Sivaprasath</h2>
           <h3>Frontend Developer</h3>
           <div className="profile_buttons">
-          <Link href="/asset/Resume.pdf" target="_blank" download className="btn downloadbtn">Download CV</Link>
-          <a href="./asset/Resume.pdf" target="_blank" className="btn contactbtn">View Resume</a>
-
+            <button onClick={()=>window.open(Resume)} className="btn downloadbtn">Resume</button>
+            <a href="#contact">
+            <button className="btn contactbtn">Contact Info</button></a>
           </div>
           <div className="profile_buttons">
             <a href="https://www.linkedin.com/in/sivaprasath2004/">
@@ -28,6 +29,12 @@ const Home = () => {
               <img
                 src="https://cdn-icons-png.flaticon.com/128/2111/2111432.png"
                 alt="github"
+              />
+            </a>
+            <a href="https://www.frontendmentor.io/profile/sivaprasath2004">
+              <img id="frontend_mentor"
+                src={frontendMentor}
+                alt="frontend mentor"
               />
             </a>
           </div>
