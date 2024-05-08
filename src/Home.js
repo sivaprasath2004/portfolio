@@ -1,5 +1,6 @@
 import React from "react";
 import Its_me from "./asset/ItsMe.png";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
@@ -12,8 +13,9 @@ const Home = () => {
           <h2>Sivaprasath</h2>
           <h3>Frontend Developer</h3>
           <div className="profile_buttons">
-            <button className="btn downloadbtn">Download CV</button>
-            <button className="btn contactbtn">Contact Info</button>
+          <Link href="/asset/Resume.pdf" target="_blank" download className="btn downloadbtn">Download CV</Link>
+          <a href="./asset/Resume.pdf" target="_blank" className="btn contactbtn">View Resume</a>
+
           </div>
           <div className="profile_buttons">
             <a href="https://www.linkedin.com/in/sivaprasath2004/">

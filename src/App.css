@@ -112,6 +112,7 @@ nav .mode{
   transition: 0.3s ease;
   filter: var(--invert);
   margin-right: 10px;
+  cursor: pointer;
 }
 nav .lightMode{
   rotate: 0deg;
@@ -143,7 +144,6 @@ h1{
 }
 #home{
   margin-top: 40px;
-  gap: 2rem;
 }
 #about,#skill,#contact{
   flex-direction: column;
@@ -497,6 +497,9 @@ footer .nav{
   }
 }
 @media (max-width:835px) {
+  #home{
+    gap: 2rem;
+  }
   #profile_detail{
     margin-top: 60px;
     justify-content: center;
