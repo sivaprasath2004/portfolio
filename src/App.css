@@ -142,9 +142,6 @@ h1{
   padding-top: 100px;
   gap: 1rem;
 }
-#home{
-  margin-top: 40px;
-}
 #about,#skill,#contact{
   flex-direction: column;
 }
