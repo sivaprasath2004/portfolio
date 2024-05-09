@@ -542,6 +542,11 @@ footer .nav{
         min-height: 317px;
   }
 }
+@media (min-width:650px) {
+  main nav .nav{
+    width: 50%;
+  }
+}
 @media (max-width:1200px){
   nav{
     justify-content: center;
