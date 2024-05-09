@@ -469,11 +469,11 @@ footer .nav{
   #PROJECT{
     width: 340px;
   }
+}
+@media (min-width:1200px) {
   #contact{
     min-height: 100%;
   }
-}
-@media (min-width:835px) {
   #profile_detail{
     justify-content: flex-start;
   }
@@ -503,18 +503,27 @@ footer .nav{
   }
 
 }
-@media (min-width:835px){
+@media (min-width:833px){
+  #home{
+    margin-top: 20px;
+  }
+}
+@media (min-width:1200px){
   #home{
     min-height: 100%;
     gap: 4rem;
   }
 }
-@media (max-width:835px) {
+@media (max-width:1200px) {
   #home{
     flex-direction: column;
   }
   #profile_image::after{
     top:5rem;
+  }
+  footer .nav{
+    flex-direction: column;
+    padding: 1rem;
   }
 }
 @media (min-width:1040px){
@@ -533,7 +542,7 @@ footer .nav{
         min-height: 317px;
   }
 }
-@media (max-width:800px){
+@media (max-width:1200px){
   nav{
     justify-content: center;
   }
