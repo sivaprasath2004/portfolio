@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.5a1d4a30.css",
-    "main.js": "/portfolio/static/js/main.9e696c57.js",
+    "main.css": "/portfolio/static/css/main.99380b03.css",
+    "main.js": "/portfolio/static/js/main.76aee87b.js",
     "static/media/IMG_20240405_183536.png": "/portfolio/static/media/IMG_20240405_183536.8e9bbeb26726250e61d9.png",
     "static/media/IMG_20240405_175005.png": "/portfolio/static/media/IMG_20240405_175005.c41cb3571cb30921ef19.png",
     "static/media/IMG_20240405_181030.png": "/portfolio/static/media/IMG_20240405_181030.853477c8ad1a9b7391cb.png",
@@ -26,14 +26,17 @@
     "static/media/IMG_20240405_181112.png": "/portfolio/static/media/IMG_20240405_181112.e3220aa4364c57514154.png",
     "static/media/Tic_tac_toe4.png": "/portfolio/static/media/Tic_tac_toe4.108e00b800fe6868d300.png",
     "static/media/Zodia3.png": "/portfolio/static/media/Zodia3.81b7af0ca4e87a81ad14.png",
+    "static/media/Batch3.png": "/portfolio/static/media/Batch3.7e494d17626e26119b46.png",
+    "static/media/Batch1.png": "/portfolio/static/media/Batch1.7ef79e48257159425f87.png",
     "static/media/Zodia2.png": "/portfolio/static/media/Zodia2.3aa291a57a6d91924532.png",
+    "static/media/Batch2.png": "/portfolio/static/media/Batch2.b74e3e01025113d4915e.png",
     "static/media/Tic_tac_toe2.png": "/portfolio/static/media/Tic_tac_toe2.4a03e3298bc67e1f914d.png",
     "index.html": "/portfolio/index.html",
-    "main.5a1d4a30.css.map": "/portfolio/static/css/main.5a1d4a30.css.map",
-    "main.9e696c57.js.map": "/portfolio/static/js/main.9e696c57.js.map"
+    "main.99380b03.css.map": "/portfolio/static/css/main.99380b03.css.map",
+    "main.76aee87b.js.map": "/portfolio/static/js/main.76aee87b.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a1d4a30.css",
-    "static/js/main.9e696c57.js"
+    "static/css/main.99380b03.css",
+    "static/js/main.76aee87b.js"
   ]
 }
