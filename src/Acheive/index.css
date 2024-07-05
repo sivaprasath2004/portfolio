@@ -1,0 +1,168 @@
+#acheive{ 
+    min-height: 100vh;
+    width: 90%;
+    max-width: 800px;
+    background-color: var(--background);
+    z-index: 6;
+    display: flex;
+    flex-direction: row; 
+    overflow: hidden;
+}
+#acheive #frontend_mentor{box-shadow: 0 0px 2px var(--color)}
+.Modes #navigation button:first-child img{filter: var(--invert);}
+body #navigation button:first-child img.filter_work{filter: brightness(0) saturate(100%) invert(75%) sepia(57%) saturate(3077%) hue-rotate(82deg) brightness(87%) contrast(86%);}
+body #navigation button:nth-child(2) img.filter_work{background: #800040;filter: invert(1);}
+#acheive section h1{text-align: center;}
+#acheive section h1:first-child:after{content: "#";animation:animate 1s linear infinite;}
+@keyframes animate {
+    0%{color: black;}
+    10%{color: rgba(17, 0, 255, 0.363);}
+    20%{color: rgba(0, 0, 255, 0.616);}
+    30%{color: rgb(8, 8, 77);}
+    50%{color: transparent;}
+    60%{color: purple;}
+    70%{color: rgba(128, 0, 128, 0.719);}
+    80%{color: rgba(128, 0, 128, 0.459);}
+    100%{color: white;}
+}
+#acheive .achieve_text::after{content: "🏆";animation: rotation 0.5s linear infinite;}
+@keyframes rotation {
+    0%{rotate: 0deg;}
+    50%{rotate: 25deg;}
+    100%{rotate: 0deg;}
+}
+#acheive svg{
+    height: 150px;
+    width: 150px;
+    transform: rotate(270deg);
+}
+
+#acheive circle{
+    stroke:  transparent;
+    stroke-width: 7;
+    fill: #90ff9152;   
+    stroke-linecap: round;
+}
+#acheive svg circle:nth-child(2){
+    stroke: #11bf1a;
+}
+#acheive #Batches{display: flex;flex-wrap: wrap;justify-content: center;align-items: center;margin-bottom: 2rem;}
+#acheive #Batch{display: flex;flex: 1 0 8rem;flex-direction: column;justify-content: center;align-items: center;}
+#acheive #Batch img{max-width: 180px;object-fit: contain;}
+#acheive #navigation{width: 10%;height: 100%;display: flex;align-items: center;gap: 1rem;flex-direction: column;border-right: 1px solid;padding: 0.5rem;}
+#acheive #switcher{width: 90%;height: 100%;overflow: scroll;}
+#acheive #navigation img{width: 90%;object-fit: contain;margin: auto;max-width: 3.5rem;}
+#acheive #navigation button{border: none;background: transparent;}
+#acheive #project_Info{ margin-left: 2rem;}
+#acheive #project_Info a,#acheive #switcher a{ text-decoration: none;}
+#acheive #project_Info p{ font-size: 1rem;padding: 0.3rem;}
+#acheive #project_Info p:first-child{ border-bottom: 1px solid;}
+#acheive #heading{
+    font-family: monospace,sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#acheive #mentor_solution{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#acheive #mentor_heading2{
+    font-size: 2rem;
+    margin-left: 1.5rem;
+}
+ 
+ 
+#acheive #mentor_solution div{
+  flex: 1 0 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+} 
+#acheive #mentor_solution div::before{position: absolute;font-size: 1.5rem;font-family: 'Signika Negative',sans-serif;top:5.2rem;}
+#acheive #mentor_solution div::before{content: "100%";}
+#acheive #mentor_solution div:first-child:before{content: "97%";}
+#acheive #status_container{display: flex;flex-direction: column;justify-content: center;align-items: center;}
+#acheive #line{margin: 1rem 0; width: 100%;}
+#acheive #image_container{display: flex;flex-wrap: wrap;justify-content: center;align-items: center;}
+#acheive #image_container img{flex: 1 0 8rem;}
+#small_icon{height: 2rem;width: 2rem;}
+#secondary{height: 3rem;width: 50%;object-fit: contain;margin: 0.4rem;}
+#important_img{width: 95%;margin: auto;}
+.inspect,
+.inspect *,
+.inspect :after,
+.inspect :before,
+.inspect:after,
+.inspect:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.inspect {
+  -webkit-tap-highlight-color: 
+transparent;
+  -webkit-appearance: button;
+  background-color: 
+#57f010;
+  background-image: none;
+  color: 
+#fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0; 
+  padding: 0;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+.inspect:disabled {
+  cursor: default;
+}
+.inspect:-moz-focusring {
+  outline: auto;
+}
+.inspect svg {
+  display: block;
+  vertical-align: middle;
+}
+.inspect [hidden] {
+  display: none;
+}
+.inspect {
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse 2s infinite; 
+  border-radius: 999px;
+  box-shadow: 0 0 0 1em 
+transparent;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  -webkit-mask-image: none;
+  overflow: hidden;
+  padding: 0.5rem 2rem;
+  position: relative;
+  text-transform: uppercase;
+  margin: 2rem 1rem 2rem auto;
+}
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 
+#6cda23;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 
+#19e723;
+  }
+}

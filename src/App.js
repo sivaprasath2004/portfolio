@@ -5,14 +5,21 @@ import About from "./About";
 import Skill from "./Skill";
 import Project from "./Project";
 import Contact from "./Contact";
+import ParticlesComponent from "./particle/particleComponent";
+import Page from "./Acheive/Page";
 const App = () => {
-  const [checker, setChecker] = useState({ menu: true, mode: false });
+  const [checker, setChecker] = useState({ menu: true, mode: false,acheive:false });
   function handleModes() {
     setChecker((pre) => ({ ...pre, mode: !checker.mode }));
     document.body.classList.toggle("Modes");
   }
+  function handleAcheive(){
+    setChecker((pre) => ({ ...pre, acheive: !checker.acheive }))
+    console.log("click")
+  }
   return (
-    <main>
+    <>
+    <main className={checker.acheive?"acheive":""}>
       <nav>
         <h1>
           S<span>ivaprasath</span>
@@ -32,10 +39,19 @@ const App = () => {
           onClick={() => setChecker((pre) => ({ ...pre, menu: !checker.menu }))}
         ></div>
       </nav>
+      <div className={checker.acheive?"hambar active":"hambar"}>
+      <div id="menu"  onClick={() => handleAcheive()}>
+       <span className="menu" ></span>
+      </div>
+      </div>
+      <section id="Acheivement">
+      <Page mode={checker.mode} />
+      </section>
+    <ParticlesComponent mode={checker.mode} />
       <section id="home">
         <Home />
       </section>
-      <section id="about">
+      <section id="about" style={{background:checker.mode?"black":"white"}}>
         <About />
       </section>
       <section id="skill">
@@ -60,6 +76,7 @@ const App = () => {
         </p>
       </footer>
     </main>
+    </>
   );
 };
 

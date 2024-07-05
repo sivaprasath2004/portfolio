@@ -7,12 +7,14 @@
   --background:white;
   --invert:invert(0%);
   --secondary-color:rgb(85, 85, 85);
+  --gradient:linear-gradient(135deg, #F29A3A, #EB4A4A) ;
 }
 .Modes{
   --color:white;
   --background:black;
   --invert:invert(100%);
   --secondary-color:rgb(201 193 193);
+  --gradient:black;
 }
 *{
   margin: 0;
@@ -55,7 +57,85 @@ main{
   scroll-behavior: smooth;
   overflow-x: hidden;
   background-color: var(--background);
+  position: relative;
 }
+ 
+#tsparticles{
+  position: absolute;
+  height: 100vh;
+  width: 100%; 
+}
+.hambar{
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  transition: 0.3s ease-in;
+  transform: translateX(95%);
+  z-index: 7;
+  margin-top: 100px;
+}
+#Acheivement{
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  transition: 0.3s ease-in;
+  transform: translateX(200%);
+  z-index: 6;
+  display: flex;
+  justify-content: flex-end; 
+}
+.acheive #Acheivement{transform: translateX(0%);}
+.acheive #acheive{box-shadow: 0 2px 12px 100rem rgb(0, 0, 0, 0.4);}
+.acheive .hambar{display: flex;justify-content: flex-end;align-items: center;transform: translateX(-90%);}
+@media (max-width:1000px) {
+  .hambar{ width: 100vw;} 
+}
+@media (max-width:870px) {
+  .hambar{transform: translateX(94%);} 
+}
+@media (max-width:740px) {
+  .hambar{transform: translateX(86%);} 
+}
+#menu{
+  width: 3rem;
+  height: 3rem;
+  background-color:#591DAA ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  margin: auto; 
+  top: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: none; 
+} 
+#menu .menu{
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 4px;
+ transition: 0.3s ease-in;
+ width: 40%; 
+ border-radius: 10px;
+ background: transparent;
+}
+#menu .menu::before,#menu .menu::after{background: white;}
+.Modes #menu .menu::before,.Modes #menu .menu::after{background: black;}
+#menu .menu::before,#menu .menu::after{
+  content: "";
+  height: 100%;
+  width: 100%; 
+  position: absolute;
+  border-radius: 10px;
+ transition: 0.3s ease-in;
+}
+
+#menu .menu::before{top: -5px;rotate: -32deg;}
+#menu .menu::after{top: 5px;rotate: 32deg;}
+.hambar.active #menu .menu::before{rotate: 32deg;}
+.hambar.active #menu .menu::after{rotate: -32deg;}
 main nav{
   display: flex;
   justify-content: space-between;
@@ -117,6 +197,12 @@ nav .mode{
 nav .lightMode{
   rotate: 0deg;
 }
+body canvas{
+  position: absolute !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+  background:var(--gradient) !important ;
+} 
 nav .darkMode{
   rotate: 180deg;
 }
@@ -197,10 +283,11 @@ justify-content: center;
   justify-content: center;
   align-items: center;
 }
-#profile_detail .details h1,#About_knowmore,#contact p,#skill p,#project p{
+.darkMode #profile_detail .details h1,#About_knowmore,#contact p,#skill p,#project p{
   font-size: 1.2rem;
   color: var(--secondary-color);
 }
+#profile_detail .details h1{font-size: 1.2rem;color: white;}
 article div p{
   text-align: left;
 }
@@ -212,10 +299,12 @@ article div p{
 }
 #profile_detail .details h3{
   font-size: 1.6rem;
-  color: var(--secondary-color);
+  color: white;
   font-family: "Reddit Mono", monospace; 
 }
-
+body.Modes #profile_detail .details h3,body.Modes #profile_detail .details h1{
+  color: var(--secondary-color) !important;
+}
 #profile_image img{
   height: 300px;
   width: 300px;
@@ -269,6 +358,11 @@ article div p{
   color: var(--background);
 }
 .downloadbtn {
+  color: var(--color);
+  background: transparent !important;
+  border: 1px solid ;
+}
+.darkMode .downloadbtn {
   color: var(--color);
   background: var(--background);
 }
@@ -424,6 +518,74 @@ footer .nav{
   align-items: center;
   gap: 2rem ;
 }
+#contact section{
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  margin: auto;
+  display: flex;
+  border-radius: 0.6rem;
+  box-shadow: 0 1px 10px rgb(0, 0, 0, 0.4);
+}
+#contact section form,#contact section div{
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding:3rem 1rem 1rem;
+  flex-direction: column;
+}
+#contact section div{
+  background:#4B4F97;
+  border-radius:0.6rem 0 0 0.6rem;
+}
+#contact section form input,#contact section form textarea{
+  width: 98%;
+  padding: 1rem 0 1rem 1rem;
+  margin: 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--color);
+  background: var(--background);
+  color: var(--color);
+  font-family: monospace;
+}
+#contact section form button{
+  width: 98%;
+  padding: 1rem 2rem;
+  background-color: var(--color);
+  border: 1px solid var(--color); 
+  color: var(--background);
+  font-size: 1rem;
+  font-family: 'Reddit Mono', sans-serif;
+  border-radius: 0.6rem;
+  font-weight: 600;
+}
+#contact section form textarea{
+  border: none;
+  border-bottom: 1px solid var(--color);
+  border-radius: 0px;
+}
+#contact #Contact_content{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+#contact #Contact_content a,#contact #Contact_content p{
+  text-decoration: none;
+  color: var(--color);
+}
+#contact #Contact_content img{
+  height: 2rem;
+  object-fit: contain;
+}
+#contact section img{
+  filter: invert(1);
+}
+.Modes #contact section form{border: 1px solid white;border-left: none;border-radius:0 0.6rem 0.6rem 0;} 
+#contact section div{align-items: flex-start;}
+#contact section div #USER_LOGO{margin: auto;height: 5rem;object-fit: contain;} 
 @media (max-width:450px){
   #PROJECT{
     width: 80%;
