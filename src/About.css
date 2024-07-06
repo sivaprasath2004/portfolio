@@ -2,6 +2,8 @@
     display: grid;
     place-items: center;
     gap: 1rem;
+    position: relative;
+    z-index: 2;
 }
 #about h1:nth-child(3){
     font-weight: 600;

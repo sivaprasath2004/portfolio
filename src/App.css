@@ -62,7 +62,7 @@ main{
  
 #tsparticles{
   position: absolute;
-  height: 100vh;
+  height: auto;
   width: 100%; 
   z-index: -1;
   top: 0;
@@ -209,7 +209,7 @@ body canvas{
 nav .darkMode{
   rotate: 180deg;
 }
-#home,#about,#skill,#project,#contact{
+#home,#about,#skill,#project{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -239,6 +239,13 @@ h1{
 }
 #about,#skill,#contact{
   flex-direction: column;
+}
+.ContactUs_container_section,#contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;  
 }
 #profile_image{
   flex:1 0 30rem;
@@ -690,9 +697,10 @@ footer .nav{
 } 
 @media (min-width:1200px){
   #home{
-    min-height: 100%;
+    min-height: 100vh;
     gap: 4rem;
   }
+  #profile_image img{position: relative;right: 2rem;}
 }
 @media (max-width:1200px) {
   #home{

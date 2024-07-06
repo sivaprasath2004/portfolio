@@ -35,6 +35,7 @@ const Contact = () => {
       <p>{result==="success"?"✔  success":"Something went wrong"}</p></div>
       <p>Get in Touch</p>
       <h1>Contact Me</h1>
+      <div className="ContactUs_container_section">
       <section>
       <div>
         <img id="USER_LOGO" src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="user" />
@@ -77,6 +78,7 @@ const Contact = () => {
           />
           Siva Prasath
         </a>
+      </div>
       </div>
     </>
   );
