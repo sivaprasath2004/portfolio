@@ -7,7 +7,7 @@ const Contact = () => {
   async function handleSubmit(e){
     e.preventDefault()
     setLOading(true)
-    let res=await axios.post('http://localhost:5000/contactus',userDetails)
+    let res=await axios.post('https://profolio-backend-2z932h7q8-sivas-projects-f98d9b89.vercel.app/contactus',userDetails)
     setUserDetails({name:"",email:"",subject:"",message:""}) 
     if(res){ 
     setLOading(false) 
