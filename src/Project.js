@@ -60,10 +60,7 @@ const Project = () => {
           <div id="project_buttons">
             <a href="https://github.com/sivaprasath2004/social-media-application">
               <button className="btn downloadbtn">Github</button>
-            </a>
-            <a href="https://zodia.vercel.app/">
-              <button className="btn contactbtn">Live Demo</button>
-            </a>
+            </a> 
           </div>
         </div>
 

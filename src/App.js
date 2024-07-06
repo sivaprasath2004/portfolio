@@ -47,20 +47,20 @@ const App = () => {
       <section id="Acheivement">
       <Page mode={checker.mode} />
       </section>
-      <section id="home">
+      <section id="home" className="section">
         <Home />
     <ParticlesComponent mode={checker.mode} />
       </section>
-      <section id="about" style={{background:checker.mode?"black":"white"}}>
+      <section id="about" style={{background:checker.mode?"black":"white"}} className="section">
         <About />
       </section>
-      <section id="skill">
+      <section id="skill" className="section">
         <Skill />
       </section>
-      <section id="project">
+      <section id="project" className="section">
         <Project />
       </section>
-      <section id="contact">
+      <section id="contact" className="section">
         <Contact />
       </section>
       <footer>
