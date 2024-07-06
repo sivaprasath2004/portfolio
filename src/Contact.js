@@ -1,12 +1,38 @@
 import React,{useState} from "react";
-
+import axios from 'axios'
 const Contact = () => {
   const [userDetails,setUserDetails]=useState({name:"",email:"",subject:"",message:""})
-  function handleSubmit(e){
+  const [loading,setLOading]=useState(false)
+  const [result,setResult]=useState(false)
+  async function handleSubmit(e){
     e.preventDefault()
+    setLOading(true)
+    let res=await axios.post('http://localhost:5000/contactus',userDetails)
+    setUserDetails({name:"",email:"",subject:"",message:""}) 
+    if(res){ 
+    setLOading(false) 
+    if(res.data.response){
+    handleMessages("success")
+    }
+    else{
+    handleMessages("Error")
+    }
+    return
+    } 
+    function handleMessages(val){
+      setResult(val)
+      setTimeout(()=>{
+        setResult(false)
+      },1500)
+    }
   }
+  function handleChange(e){
+   setUserDetails(pre=>({...pre,[e.target.name]:e.target.value}))
+  } 
   return (
     <>
+    <div className={`alerting ${result}`}>
+      <p>{result==="success"?"✔  success":"Something went wrong"}</p></div>
       <p>Get in Touch</p>
       <h1>Contact Me</h1>
       <section>
@@ -29,11 +55,11 @@ const Contact = () => {
         </div>
       </div>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="Mail Adress" required />
-        <input  type="text" placeholder="Subject" required/>
-        <textarea required placeholder="Message..."></textarea>
-        <button type="submit">submit</button>
+        <input type="text" name="name" placeholder="Name" required onChange={handleChange} value={userDetails.name}/>
+        <input type="email" name="email" placeholder="Mail Adress" required onChange={handleChange} value={userDetails.email} />
+        <input  type="text" name="subject" placeholder="Subject" required onChange={handleChange} value={userDetails.subject} />
+        <textarea required placeholder="Message..." name="message" onChange={handleChange} value={userDetails.message} ></textarea>
+        <button type="submit">{loading?<div className="loader"></div>:"submit"}</button>
       </form>
       </section>
       <div id="contact_details">

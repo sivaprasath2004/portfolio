@@ -33,13 +33,13 @@
   }
 
   *::-webkit-scrollbar-track {
-    background: var(--background);
+    background: transparent;
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #eb0066;
+    background-color: transparent;
     border-radius: 10px;
-    border: 1px solid var(--background);
+    border: 1px solid transparent;
   }
 body{
   color: var(--color);
@@ -64,6 +64,8 @@ main{
   position: absolute;
   height: 100vh;
   width: 100%; 
+  z-index: -1;
+  top: 0;
 }
 .hambar{
   width: 100vw;
@@ -109,6 +111,7 @@ main{
   bottom: 0;
   border-radius: 50%;
   border: none; 
+  cursor: pointer;
 } 
 #menu .menu{
  position: relative;
@@ -212,6 +215,12 @@ nav .darkMode{
   justify-content: center;
   align-items: center;
 }
+#home{
+  position: relative;
+    z-index: 1;
+    height: auto;
+    background: var(--gradient);
+}
 #contact{
   margin-top: 100px;
 }
@@ -253,9 +262,9 @@ h1{
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   z-index: 1;
   top: 2px;
-  animation: animate 10s linear infinite;
+  animation: animateBG 10s linear infinite;
 }
-@keyframes animate {
+@keyframes animateBG {
   0%{
   border-radius:30% 70% 70% 30% / 30% 30% 70% 70% ;
   }
@@ -276,12 +285,22 @@ h1{
 justify-content: center;
 }
 #profile_detail .details{
-  width: 300px;
+  min-width: 300px;
+  width: 90%;
+  max-width: 500px;
   gap: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#profile_detail .details #text_change_container{min-height: 2.2rem;max-height: 5rem;}
+#profile_detail .details h3{text-align: center;position: relative;}
+#profile_detail .details h3::after{content: "";height: 2rem;width: 0.2rem;position: absolute;background-color: var(--background);animation: blinked 0.2s linear infinite;}
+@keyframes blinked {
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 1;}
 }
 .darkMode #profile_detail .details h1,#About_knowmore,#contact p,#skill p,#project p{
   font-size: 1.2rem;
@@ -359,7 +378,7 @@ body.Modes #profile_detail .details h3,body.Modes #profile_detail .details h1{
 }
 .downloadbtn {
   color: var(--color);
-  background: transparent !important;
+  background: transparent ;
   border: 1px solid ;
 }
 .darkMode .downloadbtn {
@@ -369,6 +388,8 @@ body.Modes #profile_detail .details h3,body.Modes #profile_detail .details h1{
 
 .downloadbtn:hover {
   border: var(--background) 0.1rem solid;
+  background: var(--color);
+  color: var(--background);
 }
 .skill{
   display: flex;
@@ -487,7 +508,7 @@ span{
   border-radius: 12px;
 }
 #contact_details{
-  margin-top: 4rem;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -522,10 +543,11 @@ footer .nav{
   width: 90%;
   max-width: 800px;
   height: auto;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   border-radius: 0.6rem;
   box-shadow: 0 1px 10px rgb(0, 0, 0, 0.4);
+  margin-top: 2rem;
 }
 #contact section form,#contact section div{
   width: 50%;
@@ -571,10 +593,11 @@ footer .nav{
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  background: transparent;
 }
 #contact #Contact_content a,#contact #Contact_content p{
   text-decoration: none;
-  color: var(--color);
+  color: white;
 }
 #contact #Contact_content img{
   height: 2rem;
@@ -664,12 +687,7 @@ footer .nav{
     justify-content: center;
   }
 
-}
-@media (min-width:833px){
-  #home{
-    margin-top: 20px;
-  }
-}
+} 
 @media (min-width:1200px){
   #home{
     min-height: 100%;
@@ -766,4 +784,55 @@ footer .nav{
     transform: translateX(200%);
     box-shadow: none;
   }
+} 
+#contact section .loader {
+  width: 1rem;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--background); 
+  margin: -0.3rem auto;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {to{transform: rotate(1turn)}}
+#contact .alerting{
+    height: 50px;
+    width: 40%;
+    margin: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 0.6rem; 
+    position: fixed;
+    transition: 0.3s ease-in;
+    top: -100%;
+    z-index: 99;
+}
+#contact .alerting.success{ background: #20ff67a3; border: 2px solid #25b325;top: 15%;}
+#contact .alerting.Error{background: #ff20209e;border: 2px solid #b91b1bcc;top: 15%;}
+#contact .alerting.Error::before{content: "🗙";color:#ff20209e;padding-right: 1rem;font-weight: 700;font-size: 1.5rem;}
+#contact .alerting p{color:var(--color) ;}  
+@media (max-width:800px) {
+  #contact section{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+  }
+  #contact section form, #contact section div{
+    width: 100%; 
+    padding: 3rem 0 1rem;
+  }
+  .Modes #contact section form{border: none;}
+  #contact section div:first-child{border-radius: 0.6rem 0.6rem 0 0;}
+  #contact #Contact_content{margin-left: 1.3rem;} 
+  .Modes #contact section{border: 1px solid var(--color);border-radius: 0.6rem;}
+  #contact section form input, #contact section form textarea{width: 90%;}
 }

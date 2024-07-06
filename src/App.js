@@ -47,9 +47,9 @@ const App = () => {
       <section id="Acheivement">
       <Page mode={checker.mode} />
       </section>
-    <ParticlesComponent mode={checker.mode} />
       <section id="home">
         <Home />
+    <ParticlesComponent mode={checker.mode} />
       </section>
       <section id="about" style={{background:checker.mode?"black":"white"}}>
         <About />
