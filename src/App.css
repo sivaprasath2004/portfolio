@@ -302,16 +302,31 @@ justify-content: center;
 }
 #profile_detail .details #text_change_container{min-height: 2.2rem;max-height: 5rem;}
 #profile_detail .details h3{text-align: center;position: relative;}
-#profile_detail .details h3::after{content: "";height: 2rem;width: 0.2rem;position: absolute;background-color: var(--background);animation: blinked 0.2s linear infinite;}
+#profile_detail .details h3::after{content: "";height: 2rem;width: 0.2rem;position: absolute;background-color: var(--secondary-color);animation: blinked 0.2s linear infinite;}
 @keyframes blinked {
   0%{opacity: 1;}
   50%{opacity: 0;}
   100%{opacity: 1;}
 }
-.darkMode #profile_detail .details h1,#profile_detail .details h3,#About_knowmore,#contact p,#skill p,#project p,#profile_detail .details h1{
+.darkMode #profile_detail .details h1,#profile_detail .details h3,#About_knowmore,#contact p,#skill p,#project p,#profile_detail .details h1 span:first-child{
   font-size: 1.2rem;
   color: var(--secondary-color);
 } 
+#profile_detail .details h1{display:flex;gap: 3rem;justify-content: center;align-items: center;}
+#profile_detail .details h1 span:nth-child(2){position: relative;}
+#profile_detail .details h1 span:nth-child(2)::before{
+  content: "👋";
+  position: absolute;
+  font-size: 2rem;
+  left: -3rem;
+  top: -0.8rem;
+  animation: shake 0.5s linear infinite;
+}
+@keyframes shake {
+  0%{rotate: 0deg;}
+  50%{rotate: 20deg;}
+  100%{rotate: 0deg;}
+}
 article div p{
   text-align: left;
 }

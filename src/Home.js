@@ -61,7 +61,7 @@ const Home = () => {
       </div>
       <div id="profile_detail">
         <div className="details">
-          <h1>Hello I`m</h1>
+          <h1><span>Hello </span><span>I'm</span></h1>
           <h2>Sivaprasath</h2>
           <div id="text_change_container">
           <Typewriter data={data} />
