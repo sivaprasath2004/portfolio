@@ -854,7 +854,8 @@ footer .nav{
    #home{background: var(--background);}  
    body canvas{background: transparent !important;}
    .Modes canvas{background:var(--gradient) ;}
+   #profile_image{margin-top: 0px;}
    #profile_image img{width: 250px;height: 250px;}
-   #profile_image::after{height: 300px;width: 300px;top: 6.4rem;}
+   #profile_image::after{height: 300px;width: 300px;top: 7.5rem;}
    #profile_detail .details h1,#profile_detail .details h3{color: var(--secondary-color) !important}
  }
