@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./App.css";
 import Home from "./Home";
 import About from "./About";
@@ -6,7 +6,7 @@ import Skill from "./Skill";
 import Project from "./Project";
 import Contact from "./Contact";
 import ParticlesComponent from "./particle/particleComponent";
-import Page from "./Acheive/Page";
+import Page from "./Acheive/Page"; 
 const App = () => {
   const [checker, setChecker] = useState({ menu: true, mode: false,acheive:false });
   function handleModes() {

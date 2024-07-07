@@ -7,7 +7,7 @@
   --background:white;
   --invert:invert(0%);
   --secondary-color:rgb(85, 85, 85);
-  --gradient:linear-gradient(135deg, #F29A3A, #EB4A4A) ;
+  --gradient:white ;
 }
 .Modes{
   --color:white;
@@ -308,11 +308,10 @@ justify-content: center;
   50%{opacity: 0;}
   100%{opacity: 1;}
 }
-.darkMode #profile_detail .details h1,#About_knowmore,#contact p,#skill p,#project p{
+.darkMode #profile_detail .details h1,#profile_detail .details h3,#About_knowmore,#contact p,#skill p,#project p,#profile_detail .details h1{
   font-size: 1.2rem;
   color: var(--secondary-color);
-}
-#profile_detail .details h1{font-size: 1.2rem;color: white;}
+} 
 article div p{
   text-align: left;
 }
@@ -326,13 +325,9 @@ article div p{
     color: transparent;
 }
 #profile_detail .details h3{
-  font-size: 1.6rem;
-  color: white;
+  font-size: 1.6rem; 
   font-family: "Reddit Mono", monospace; 
-}
-body.Modes #profile_detail .details h3,body.Modes #profile_detail .details h1{
-  color: var(--secondary-color) !important;
-}
+} 
 #profile_image img{
   height: 300px;
   width: 300px;
