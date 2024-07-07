@@ -7,6 +7,7 @@ const Contact = () => {
   async function handleSubmit(e){
     e.preventDefault()
     setLOading(true)
+    try{
     let res=await axios.post('https://profolio-backend-one.vercel.app/contactus',userDetails)
     setUserDetails({name:"",email:"",subject:"",message:""}) 
     if(res){ 
@@ -15,16 +16,20 @@ const Contact = () => {
     handleMessages("success")
     }
     else{
-    handleMessages("Error")
+      handleMessages("Error")
     }
     return
     } 
-    function handleMessages(val){
-      setResult(val)
-      setTimeout(()=>{
-        setResult(false)
-      },1500)
-    }
+    throw new Error("something")
+  }catch(err){
+    handleMessages("Error")
+  }
+  }
+  function handleMessages(val){
+    setResult(val)
+    setTimeout(()=>{
+    setResult(false)
+    },10000)
   }
   function handleChange(e){
    setUserDetails(pre=>({...pre,[e.target.name]:e.target.value}))
@@ -37,7 +42,7 @@ const Contact = () => {
       <h1>Contact Me</h1>
       <div className="ContactUs_container_section">
       <section>
-      <div>
+      <div className="my_details_container">
         <img id="USER_LOGO" src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="user" />
         <div id="Contact_content">
           <img src="https://cdn-icons-png.flaticon.com/128/1483/1483285.png" alt="location" />
