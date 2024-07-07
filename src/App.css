@@ -219,7 +219,6 @@ nav .darkMode{
   position: relative;
     z-index: 1;
     height: auto;
-    background: var(--gradient);
 }
 #contact{
   margin-top: 100px;
@@ -848,3 +847,14 @@ footer .nav{
   .Modes #contact section{border: 1px solid var(--color);border-radius: 0.6rem;}
   #contact section form input, #contact section form textarea{width: 90%;}
 }
+ @media (min-width:450px) {
+  #home{ background: var(--gradient);}
+ }
+ @media (max-width:450px) {
+   #home{background: var(--background);}  
+   body canvas{background: transparent !important;}
+   .Modes canvas{background:var(--gradient) ;}
+   #profile_image img{width: 250px;height: 250px;}
+   #profile_image::after{height: 300px;width: 300px;top: 6.4rem;}
+   #profile_detail .details h1,#profile_detail .details h3{color: var(--secondary-color) !important}
+ }
