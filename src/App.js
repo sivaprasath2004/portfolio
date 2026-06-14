@@ -1,82 +1,125 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import Home from "./Home";
-import About from "./About";
-import Skill from "./Skill";
-import Project from "./Project";
-import Contact from "./Contact";
-import ParticlesComponent from "./particle/particleComponent";
-import Page from "./Acheive/Page"; 
+import Home from "./components/Home";
+import About from "./components/About";
+import Skill from "./components/Skill";
+import Project from "./components/Project";
+import Contact from "./components/Contact";
+import Achievements from "./components/Achievements";
+
 const App = () => {
-  const [checker, setChecker] = useState({ menu: true, mode: false,acheive:false });
-  function handleModes() {
-    setChecker((pre) => ({ ...pre, mode: !checker.mode }));
-    document.body.classList.toggle("Modes");
-  }
-  function handleAcheive(){
-    setChecker((pre) => ({ ...pre, acheive: !checker.acheive }))
-    console.log("click")
-  }
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
+  const [achieveOpen, setAchieveOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const main = document.getElementById("main-scroll");
+      if (!main) return;
+      setScrolled(main.scrollTop > 60);
+      const sections = ["home", "about", "skill", "project", "contact"];
+      for (let id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 120 && rect.bottom >= 120) {
+            setActiveSection(id);
+            break;
+          }
+        }
+      }
+    };
+    const main = document.getElementById("main-scroll");
+    if (main) main.addEventListener("scroll", handleScroll);
+    return () => main && main.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = ["about", "skill", "project", "contact"];
+
   return (
-    <>
-    <main className={checker.acheive?"acheive":""}>
-      <nav>
-        <h1>
+    <div className={`app-wrapper ${darkMode ? "dark" : "light"}`}>
+      {/* Achievement Side Panel */}
+      <div className={`achieve-overlay ${achieveOpen ? "open" : ""}`} onClick={() => setAchieveOpen(false)} />
+      <aside className={`achieve-panel ${achieveOpen ? "open" : ""}`}>
+        <button className="achieve-close" onClick={() => setAchieveOpen(false)}>✕</button>
+        <Achievements darkMode={darkMode} />
+      </aside>
+
+      {/* Floating Achievement Tab */}
+      <button className={`achieve-tab ${achieveOpen ? "hidden" : ""}`} onClick={() => setAchieveOpen(true)}>
+        <span className="achieve-tab-icon">🏆</span>
+        <span className="achieve-tab-label">Achievements</span>
+      </button>
+
+      {/* Navigation */}
+      <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+        <a href="#home" className="nav-logo">
           S<span>ivaprasath</span>
-        </h1>
-        <div className={checker.menu ? "nav deactivate" : "nav"}>
-          <a href="#about">About</a>
-          <a href="#skill">Skill</a>
-          <a href="#project">Project</a>
-          <a href="#contact">Contact</a>
+        </a>
+        <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+          {navLinks.map((link) => (
+            <a
+              key={link}
+              href={`#${link}`}
+              className={`nav-link ${activeSection === link ? "active" : ""}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.charAt(0).toUpperCase() + link.slice(1)}
+            </a>
+          ))}
         </div>
-        <div
-          className={!checker.mode ? "mode darkMode" : "mode lightMode"}
-          onClick={() => handleModes()}
-        ></div>
-        <div
-          className={!checker.menu ? "MENU DEACTIVATE" : "MENU"}
-          onClick={() => setChecker((pre) => ({ ...pre, menu: !checker.menu }))}
-        ></div>
+        <div className="nav-controls">
+          <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)} aria-label="Toggle theme">
+            {darkMode ? "☀️" : "🌙"}
+          </button>
+          <button className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
+            <span /><span /><span />
+          </button>
+        </div>
       </nav>
-      <div className={checker.acheive?"hambar active":"hambar"}>
-      <div id="menu"  onClick={() => handleAcheive()}>
-       <span className="menu" ></span>
-      </div>
-      </div>
-      <section id="Acheivement">
-      <Page mode={checker.mode} />
-      </section>
-      <section id="home" className="section">
-        <Home />
-    <ParticlesComponent mode={checker.mode} />
-      </section>
-      <section id="about" style={{background:checker.mode?"black":"white"}} className="section">
-        <About />
-      </section>
-      <section id="skill" className="section">
-        <Skill />
-      </section>
-      <section id="project" className="section">
-        <Project />
-      </section>
-      <section id="contact" className="section">
-        <Contact />
-      </section>
-      <footer>
-        <div className="nav">
-          <a href="#about">About</a>
-          <a href="#skill">Skill</a>
-          <a href="#project">Project</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <p style={{ textAlign: "center", padding: 10 }}>
-          copyright © 2024
-          <a href="https://github.com/sivaprasath2004"> sivaprasath2004</a>
-        </p>
-      </footer>
-    </main>
-    </>
+
+      {/* Mobile menu overlay */}
+      {menuOpen && <div className="mobile-overlay" onClick={() => setMenuOpen(false)} />}
+
+      {/* Main Content */}
+      <main id="main-scroll">
+        <section id="home" className="section">
+          <Home />
+        </section>
+        <section id="about" className="section">
+          <About />
+        </section>
+        <section id="skill" className="section">
+          <Skill />
+        </section>
+        <section id="project" className="section">
+          <Project />
+        </section>
+        <section id="contact" className="section">
+          <Contact />
+        </section>
+
+        <footer className="footer">
+          <div className="footer-inner">
+            <span className="footer-logo">S<span>ivaprasath</span></span>
+            <div className="footer-links">
+              {navLinks.map((link) => (
+                <a key={link} href={`#${link}`} className="footer-link">
+                  {link.charAt(0).toUpperCase() + link.slice(1)}
+                </a>
+              ))}
+            </div>
+            <p className="footer-copy">© 2024 sivaprasath2004. All rights reserved.</p>
+          </div>
+        </footer>
+      </main>
+    </div>
   );
 };
 
