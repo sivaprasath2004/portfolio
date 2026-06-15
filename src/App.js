@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./components/Home";
 import About from "./components/About";
 import Skill from "./components/Skill";
+import Experience from "./components/Experience";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
 import Achievements from "./components/Achievements";
@@ -15,7 +16,10 @@ const App = () => {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
+    document.documentElement.setAttribute(
+      "data-theme",
+      darkMode ? "dark" : "light"
+    );
   }, [darkMode]);
 
   useEffect(() => {
@@ -23,7 +27,14 @@ const App = () => {
       const main = document.getElementById("main-scroll");
       if (!main) return;
       setScrolled(main.scrollTop > 60);
-      const sections = ["home", "about", "skill", "project", "contact"];
+      const sections = [
+        "home",
+        "about",
+        "experience",
+        "skill",
+        "project",
+        "contact",
+      ];
       for (let id of sections) {
         const el = document.getElementById(id);
         if (el) {
@@ -40,19 +51,30 @@ const App = () => {
     return () => main && main.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = ["about", "skill", "project", "contact"];
+  const navLinks = ["about", "experience", "skill", "project", "contact"];
 
   return (
     <div className={`app-wrapper ${darkMode ? "dark" : "light"}`}>
       {/* Achievement Side Panel */}
-      <div className={`achieve-overlay ${achieveOpen ? "open" : ""}`} onClick={() => setAchieveOpen(false)} />
+      <div
+        className={`achieve-overlay ${achieveOpen ? "open" : ""}`}
+        onClick={() => setAchieveOpen(false)}
+      />
       <aside className={`achieve-panel ${achieveOpen ? "open" : ""}`}>
-        <button className="achieve-close" onClick={() => setAchieveOpen(false)}>✕</button>
+        <button
+          className="achieve-close"
+          onClick={() => setAchieveOpen(false)}
+        >
+          ✕
+        </button>
         <Achievements darkMode={darkMode} />
       </aside>
 
       {/* Floating Achievement Tab */}
-      <button className={`achieve-tab ${achieveOpen ? "hidden" : ""}`} onClick={() => setAchieveOpen(true)}>
+      <button
+        className={`achieve-tab ${achieveOpen ? "hidden" : ""}`}
+        onClick={() => setAchieveOpen(true)}
+      >
         <span className="achieve-tab-icon">🏆</span>
         <span className="achieve-tab-label">Achievements</span>
       </button>
@@ -75,17 +97,31 @@ const App = () => {
           ))}
         </div>
         <div className="nav-controls">
-          <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)} aria-label="Toggle theme">
+          <button
+            className="theme-toggle"
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle theme"
+          >
             {darkMode ? "☀️" : "🌙"}
           </button>
-          <button className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
-            <span /><span /><span />
+          <button
+            className={`hamburger ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span />
+            <span />
+            <span />
           </button>
         </div>
       </nav>
 
       {/* Mobile menu overlay */}
-      {menuOpen && <div className="mobile-overlay" onClick={() => setMenuOpen(false)} />}
+      {menuOpen && (
+        <div
+          className="mobile-overlay"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
 
       {/* Main Content */}
       <main id="main-scroll">
@@ -94,6 +130,9 @@ const App = () => {
         </section>
         <section id="about" className="section">
           <About />
+        </section>
+        <section id="experience" className="section">
+          <Experience />
         </section>
         <section id="skill" className="section">
           <Skill />
@@ -107,7 +146,9 @@ const App = () => {
 
         <footer className="footer">
           <div className="footer-inner">
-            <span className="footer-logo">S<span>ivaprasath</span></span>
+            <span className="footer-logo">
+              S<span>ivaprasath</span>
+            </span>
             <div className="footer-links">
               {navLinks.map((link) => (
                 <a key={link} href={`#${link}`} className="footer-link">
@@ -115,7 +156,9 @@ const App = () => {
                 </a>
               ))}
             </div>
-            <p className="footer-copy">© 2024 sivaprasath2004. All rights reserved.</p>
+            <p className="footer-copy">
+              © 2025 sivaprasath2004. All rights reserved.
+            </p>
           </div>
         </footer>
       </main>
