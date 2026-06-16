@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7939c458.css",
-    "main.js": "/static/js/main.b9a29fe3.js",
+    "main.css": "/portfolio/static/css/main.4f83f810.css",
+    "main.js": "/portfolio/static/js/main.f18cdee6.js",
     "portfolio/static/media/IMG_20240405_183536.png": "/portfolio/static/media/IMG_20240405_183536.8e9bbeb26726250e61d9.png",
     "portfolio/static/media/IMG_20240405_175005.png": "/portfolio/static/media/IMG_20240405_175005.c41cb3571cb30921ef19.png",
     "portfolio/static/media/IMG_20240405_181030.png": "/portfolio/static/media/IMG_20240405_181030.853477c8ad1a9b7391cb.png",
@@ -46,11 +46,11 @@
     "portfolio/static/media/LocalBeam_cli_view.png": "/portfolio/static/media/LocalBeam_cli_view.74853216a11f59783762.png",
     "portfolio/static/media/LanConnect_kill_process.png": "/portfolio/static/media/LanConnect_kill_process.c12b0058fcfcdec8696a.png",
     "index.html": "/index.html",
-    "main.7939c458.css.map": "/static/css/main.7939c458.css.map",
-    "main.b9a29fe3.js.map": "/static/js/main.b9a29fe3.js.map"
+    "main.4f83f810.css.map": "/portfolio/static/css/main.4f83f810.css.map",
+    "main.f18cdee6.js.map": "/portfolio/static/js/main.f18cdee6.js.map"
   },
   "entrypoints": [
-    "static/css/main.7939c458.css",
-    "static/js/main.b9a29fe3.js"
+    "portfolio/static/css/main.4f83f810.css",
+    "portfolio/static/js/main.f18cdee6.js"
   ]
 }
