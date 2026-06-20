@@ -85,7 +85,7 @@ const Achievements = ({ darkMode }) => {
           />
           <img
             className="ach-github-img"
-            src={`https://github-readme-streak-stats.herokuapp.com/?user=sivaprasath2004&theme=${darkMode ? "dark" : "light"}&background=${darkMode ? "0d1117" : "ffffff"}&date_format=M%20j%5B%2C%20Y%5D`}
+            src={`https://github-readme-streak-stats.herokuapp.com/?user=sivaprasath2004&theme=${darkMode ? "dark" : "light"}&background=${darkMode ? "#0a0a0f" : "ffffff"}&date_format=M%20j%5B%2C%20Y%5D`}
             alt="GitHub Streak"
           />
         </>

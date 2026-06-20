@@ -117,7 +117,7 @@ const Home = () => (
         >
           <img
             id="frontend_mentor_icon"
-            src="https://res.cloudinary.com/dz209s6jk/image/upload/v1648626987/FEM/fem-logo-new.svg"
+            src={require("../asset/Front-end-mentor.png")}
             alt="frontend mentor"
           />
         </a>

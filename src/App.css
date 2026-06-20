@@ -488,7 +488,9 @@ img { max-width: 100%; }
 }
 
 .app-wrapper.dark .social-icon img { filter: invert(1); }
-#frontend_mentor_icon { filter: none !important; border-radius: 4px; }
+.app-wrapper.light #frontend_mentor_icon { box-shadow: 0 2px 12px rgba(0,0,0,0.08);}
+
+#frontend_mentor_icon { filter: none !important; border-radius: 50%;background-color: white; }
 
 /* ─── Profile Image ─── */
 .home-image-wrap {
@@ -497,7 +499,10 @@ img { max-width: 100%; }
   align-items: center;
   position: relative;
 }
-
+.project-btn svg{
+  position: relative;
+  top: 0.2rem;
+}
 .profile-blob-wrap {
   position: relative;
   width: 340px; height: 340px;
@@ -591,6 +596,8 @@ img { max-width: 100%; }
   object-fit: cover;
   border-radius: var(--radius);
   border: 1px solid var(--border);
+  position: relative;
+  z-index: 2;
 }
 
 .about-img-accent {
@@ -791,14 +798,21 @@ img { max-width: 100%; }
 
 .project-img-wrap {
   position: relative;
-  height: 220px;
+  height: 260px;
   overflow: hidden;
   background: var(--bg3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .project-img-wrap img {
-  width: 100%; height: 100%;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
   transition: transform 0.5s ease;
+  background: var(--bg3);
+  padding: 0;
 }
 .project-card:hover .project-img-wrap img { transform: scale(1.05); }
 
@@ -942,15 +956,21 @@ img { max-width: 100%; }
 .contact-detail:hover {
   border-color: var(--accent);
   color: var(--text);
-  box-shadow: 0 4px 16px var(--glow);
+  box-shadow: 0 4px 20px var(--glow);
+  transform: translateX(4px);
 }
 .contact-detail-icon {
-  width: 44px; height: 44px;
-  border-radius: 10px;
-  background: var(--gradient);
+  width: 46px; height: 46px;
+  border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
   flex-shrink: 0;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  transition: var(--transition);
+}
+.contact-detail:hover .contact-detail-icon {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
 .contact-detail-text { display: flex; flex-direction: column; gap: 2px; }
 .contact-detail-label { font-size: 0.75rem; color: var(--text3); letter-spacing: 0.05em; }
@@ -969,7 +989,17 @@ img { max-width: 100%; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
 .form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-label { font-size: 0.8rem; font-weight: 500; color: var(--text2); letter-spacing: 0.05em; }
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.form-label svg { opacity: 0.7; flex-shrink: 0; }
 
 .form-input, .form-textarea {
   width: 100%;
@@ -1019,7 +1049,10 @@ img { max-width: 100%; }
   border-radius: var(--radius-sm);
   font-size: 0.88rem;
   font-weight: 500;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   animation: slideDown 0.3s ease;
 }
 .form-alert.success { background: rgba(0,217,192,0.12); border: 1px solid var(--accent3); color: var(--accent3); }
@@ -1289,8 +1322,7 @@ img { max-width: 100%; }
 .exp-org-logo {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: 4px;
+  object-fit: contain; 
 }
 
 .exp-org-logo-fallback {
@@ -1588,7 +1620,7 @@ img { max-width: 100%; }
 .drawer-gh-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   padding: 0.45rem 1rem;
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -1660,6 +1692,9 @@ img { max-width: 100%; }
   border-left: none;
   border-right: none;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 .drawer-tab:hover { color: var(--text); }
 .drawer-tab.active {
@@ -1686,18 +1721,24 @@ img { max-width: 100%; }
 .drawer-gallery { display: flex; flex-direction: column; gap: 0.75rem; }
 .drawer-gallery-main {
   width: 100%;
-  height: 300px;
+  height: 320px;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--bg3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .drawer-gallery-main img {
-  width: 100%; height: 100%;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
   transition: transform 0.4s ease;
+  padding: 0;
 }
-.drawer-gallery-main:hover img { transform: scale(1.03); }
+.drawer-gallery-main:hover img { transform: scale(1.02); }
 .drawer-gallery-thumbs {
   display: flex;
   gap: 0.6rem;
@@ -1715,7 +1756,7 @@ img { max-width: 100%; }
   display: flex;
   flex-direction: column;
 }
-.drawer-thumb img { width: 100%; height: 60px; object-fit: cover; }
+.drawer-thumb img { width: 100%; height: 60px; object-fit: contain; background: var(--bg3); }
 .drawer-thumb span {
   font-size: 0.6rem;
   color: var(--text3);
@@ -1878,6 +1919,14 @@ img { max-width: 100%; }
 .ft-spacer  { width: 12px; flex-shrink: 0; }
 .ft-icon    { font-size: 1rem; flex-shrink: 0; }
 .ft-name    { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; }
+.ft-ext-link {
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  display: flex;
+  align-items: center;
+}
+.ft-row-file:hover .ft-ext-link { opacity: 1; }
 
 /* ── README Tab ── */
 .drawer-readme { display: flex; flex-direction: column; }
@@ -2011,4 +2060,26 @@ img { max-width: 100%; }
   .drawer-tabs { gap: 0; padding: 0 1rem; overflow-x: auto; }
   .drawer-overview, .drawer-code, .drawer-readme-body { padding: 1rem; }
   .drawer-repo-bar { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── Extra badge color variants ── */
+.project-badge-npm    { background: linear-gradient(135deg,#cb3837,#a02d2c) !important; }
+.project-badge-desktop { background: linear-gradient(135deg,#5c6bc0,#3949ab) !important; }
+.project-badge-final  { background: linear-gradient(135deg,#00897b,#00695c) !important; }
+
+/* ── npm button in drawer ── */
+.drawer-npm-btn {
+  background: linear-gradient(135deg,#cb3837,#a02d2c) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+.drawer-npm-btn:hover {
+  opacity: 0.88;
+  box-shadow: 0 0 16px rgba(203,56,55,0.5) !important;
+}
+@media (max-width:900px) {
+  .see-more-btn{
+    font-size:0.81rem
+  }
+  
 }
