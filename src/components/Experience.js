@@ -3,12 +3,12 @@ import React, { useState } from "react";
 const experiences = [
   {
     id: "dynmatrix",
-    role: "Software Developer",
+    role: "Full Stack Software Engineer",
     company: "Dynmatrix Global Solution Pvt Ltd",
     product: "PixsOffice — Studio Photography Software & CRM",
     period: "Aug 2024 – Present",
     type: "Full-time",
-    logo: "https://media.licdn.com/dms/image/v2/D560BAQGqMCqJaEiByg/company-logo_200_200/company-logo_200_200/0/1698399373427?e=2147483647&v=beta&t=fJzNvN1vA8nRMwFf9UE0Z8X7JYWA95jkR-iEMEH_j8A",
+    logo: require("../asset/Dynmatrix.png"),
     orgUrl: "https://www.linkedin.com/company/dynmatrix",
     highlights: [
       {

@@ -45,7 +45,7 @@ const About = () => (
 
         <p className="about-bio">
           A passionate self-taught developer proficient in front-end and full-stack
-          development, currently working as a Software Developer at Dynmatrix Global Solution.
+          development, currently working as a Full Stack Software Engineer at Dynmatrix Global Solution.
           I build performant, user-friendly web and mobile applications using the MERN stack.
           I continuously sharpen my skills through real-world projects, open-source contributions,
           and{" "}
@@ -96,6 +96,11 @@ const About = () => (
             target="_blank"
             rel="noreferrer"
           >
+              <img
+            id="frontend_mentor_icon"
+            src={require("../asset/Front-end-mentor.png")}
+            alt="frontend mentor"
+          />
             Frontend Mentor
           </a>
           <a
